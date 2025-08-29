@@ -1,0 +1,14 @@
+{
+   "extends": [
+     "stylelint-config-standard",
+     "stylelint-config-styled-components"
+   ],
+   "rules": {
+     "indentation": 2,
+     "string-quotes": "single",
+     "no-duplicate-selectors": true,
+     "color-hex-case": "lower",
+     "color-hex-length": "short"
+   },
+   "customSyntax": "postcss-styled-syntax"
+ }

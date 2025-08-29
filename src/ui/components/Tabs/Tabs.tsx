@@ -1,4 +1,5 @@
 import { FC, useMemo } from 'react';
+
 import { ITab } from 'types/model';
 
 import { Tab } from './components/Tab';

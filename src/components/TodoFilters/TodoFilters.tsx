@@ -1,12 +1,12 @@
 import { FC } from 'react';
 
 import { TODO_FILTER } from 'constants/todoFilter';
+import { TODO_TABS } from 'constants/todoTabs';
 
 import { useTodoStore } from 'store/useTodoStore';
 
 import { Tabs } from 'ui/components';
 
-import { TODO_TABS } from 'constants/todoTabs';
 import * as S from './styled';
 
 export const TodoFilters: FC = () => {

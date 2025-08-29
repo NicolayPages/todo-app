@@ -18,7 +18,6 @@ export const Wrapper = styled.button<{ variant: BtnVariants }>`
   ${TEXT.P}
   color: ${({ theme }) => theme.colors.white};
   font-weight: 700;
-
   transition:
     background-color 0.3s ease,
     transform 0.1s ease,
