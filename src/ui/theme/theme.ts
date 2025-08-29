@@ -1,0 +1,44 @@
+import { DefaultTheme } from 'styled-components';
+
+export const baseTheme: DefaultTheme = {
+  colors: {
+    lightGray: '#f4f5f9',
+    blackBlue: '#42567A',
+    lightBlackBlue: '#5a6e8c',
+    dark: '#333',
+    white: '#fff',
+    milk: '#f3f3f3',
+    gray: '#999',
+    violet: '#5d3a9b',
+    lightViolet: '#7352b3',
+    danger: '#f01f1f',
+    lightDanger: '#f70c0c',
+    blue: '#1976D2',
+  },
+  paddings: {
+    layoutPadding: '1rem',
+    titlePadding: '2rem',
+    uiPadding: '0.5rem',
+  },
+  border: {
+    small: '1px',
+  },
+  radius: {
+    small: '4px',
+    middle: '8px',
+    big: '14px',
+  },
+  sizes: {
+    uiHeight: '44px',
+    uiElement: '24px',
+    uiSmallElement: '18px',
+  },
+  breakpoints: {
+    mobile: 425,
+  },
+  gaps: {
+    small: '8px',
+    medium: '15px',
+    big: '25px',
+  },
+};

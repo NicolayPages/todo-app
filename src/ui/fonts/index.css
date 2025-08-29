@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Pantom;
+  src: url('./Pantom/Regular/Pantom-Regular.ttf') format('ttf'),
+    url('./Pantom/Regular/Pantom-Regular.woff2') format('woff2'),
+    url('./Pantom/Regular/Pantom-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Pantom;
+  src: url('./Pantom/Bold/Pantom-Bold.ttf') format('ttf'),
+    url('./Pantom/Bold/Pantom-Bold.woff2') format('woff2'),
+    url('./Pantom/Bold/Pantom-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+}

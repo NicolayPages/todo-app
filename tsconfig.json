@@ -1,0 +1,57 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "useDefineForClassFields": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "layouts/*": [
+        "./src/layouts/*"
+      ],
+      "components/*": [
+        "./src/components/*"
+      ],
+      "pages/*": [
+        "./src/pages/*"
+      ],
+      "types/*": [
+        "./src/types/*"
+      ],
+      "ui/*": [
+        "./src/ui/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ],
+      "store/*": [
+        "./src/store/*"
+      ],
+      "hooks/*": [
+        "./src/hooks/*"
+      ],
+      "constants/*": [
+        "./src/constants/*"
+      ],
+    }
+  },
+  "include": [
+    "src",
+    "svg.d.ts"
+  ]
+}
+
