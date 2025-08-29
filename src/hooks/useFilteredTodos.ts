@@ -14,7 +14,7 @@ export const useFilteredTodos = (): ITodo[] => {
 
   return useMemo(() => {
     if (filter === ALL) {
-      return todos;
+      return todos.sort((a, b) => Number(a.completed) - Number(b.completed));
     }
     if (filter === COMPLETED) {
       return todos.filter(todo => todo.completed);
