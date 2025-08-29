@@ -15,6 +15,7 @@ declare module 'styled-components' {
       danger: string;
       lightDanger: string;
       blue: string;
+      transparentBlack: string;
     };
     paddings: {
       layoutPadding: string;
@@ -23,6 +24,7 @@ declare module 'styled-components' {
     };
     border: {
       small: string;
+      medium: string;
     };
     radius: {
       small: string;
@@ -33,6 +35,8 @@ declare module 'styled-components' {
       uiHeight: string;
       uiElement: string;
       uiSmallElement: string;
+      modal: string;
+      uiBigElement: string;
     };
     breakpoints: {
       mobile: number;
@@ -41,6 +45,9 @@ declare module 'styled-components' {
       small: string;
       medium: string;
       big: string;
+    };
+    zIndex: {
+      modal: number;
     };
   }
 }

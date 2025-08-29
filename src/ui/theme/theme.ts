@@ -14,6 +14,7 @@ export const baseTheme: DefaultTheme = {
     danger: '#f01f1f',
     lightDanger: '#f70c0c',
     blue: '#1976D2',
+    transparentBlack: 'rgba(0, 0, 0, 0.4)',
   },
   paddings: {
     layoutPadding: '1rem',
@@ -22,6 +23,7 @@ export const baseTheme: DefaultTheme = {
   },
   border: {
     small: '1px',
+    medium: '2px',
   },
   radius: {
     small: '4px',
@@ -31,7 +33,9 @@ export const baseTheme: DefaultTheme = {
   sizes: {
     uiHeight: '44px',
     uiElement: '24px',
+    uiBigElement: '34px',
     uiSmallElement: '18px',
+    modal: '500px',
   },
   breakpoints: {
     mobile: 425,
@@ -40,5 +44,8 @@ export const baseTheme: DefaultTheme = {
     small: '8px',
     medium: '15px',
     big: '25px',
+  },
+  zIndex: {
+    modal: 100,
   },
 };
