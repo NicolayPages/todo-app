@@ -1,15 +1,12 @@
-import { FC, memo } from 'react';
+import { FC } from 'react';
 
+import { NotFoundProps } from './NotFound.interface';
 import * as S from './styled';
 
-interface Props {
-  message?: string;
-}
-
-export const NotFound: FC<Props> = memo(({ message = '' }) => {
+export const NotFound: FC<NotFoundProps> = ({ message = '' }) => {
   return (
     <S.Wrapper>
       <S.Text>{message}</S.Text>
     </S.Wrapper>
   );
-});
+};

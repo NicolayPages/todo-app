@@ -1,11 +1,8 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 
+import { BlockProps } from './Block.interface';
 import * as S from './styled';
 
-interface Props {
-  children?: ReactNode;
-}
-
-export const Block: FC<Props> = ({ children }) => {
+export const Block: FC<BlockProps> = ({ children }) => {
   return <S.Wrapper>{children}</S.Wrapper>;
 };

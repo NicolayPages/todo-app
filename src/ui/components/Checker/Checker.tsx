@@ -2,15 +2,10 @@ import { FC } from 'react';
 
 import { Checkmark } from 'ui/icons';
 
+import { CheckerProps } from './Checker.interface';
 import * as S from './styled';
 
-interface Props {
-  active?: boolean;
-  toggle?: () => void;
-  disable?: boolean;
-}
-
-export const Checker: FC<Props> = ({
+export const Checker: FC<CheckerProps> = ({
   active = false,
   toggle = () => null,
   disable = false,

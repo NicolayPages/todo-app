@@ -1,18 +1,13 @@
-import { FC, ReactNode, useEffect, useRef } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import { Close } from 'ui/icons';
 import { baseTheme } from 'ui/theme/theme';
 
+import { ModalProps } from './Modal.interface';
 import * as S from './styled';
 
-interface Props {
-  open: boolean;
-  close: () => void;
-  children?: ReactNode;
-}
-
-export const Modal: FC<Props> = ({ open, close, children }) => {
+export const Modal: FC<ModalProps> = ({ open, close, children }) => {
   const overlayRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

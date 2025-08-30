@@ -1,17 +1,10 @@
 import { FC, useMemo } from 'react';
 
-import { ITab, TFilter } from 'types/model';
-
+import { TabsProps } from './Tabs.interface';
 import { Tab } from './components/Tab';
 import * as S from './styled';
 
-interface Props {
-  tabs: ITab[];
-  onChange: (tabId: TFilter) => void;
-  activeId: string;
-}
-
-export const Tabs: FC<Props> = ({ tabs = [], onChange, activeId }) => {
+export const Tabs: FC<TabsProps> = ({ tabs = [], onChange, activeId }) => {
   const tabsList = useMemo(() => {
     return tabs.map(item => {
       return (

@@ -1,16 +1,9 @@
-import { ChangeEvent, FC } from 'react';
+import { FC } from 'react';
 
+import { InputProps } from './Input.interface';
 import * as S from './styled';
 
-interface Props {
-  value?: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
-  placeholder?: string;
-  name?: string;
-  disabled?: boolean;
-}
-
-export const Input: FC<Props> = ({
+export const Input: FC<InputProps> = ({
   value,
   onChange,
   placeholder = '',
