@@ -6,10 +6,21 @@ export const useGetTodoCounts = () => {
   const todos = useTodoStore(state => state.todos);
 
   return useMemo(() => {
+    let completed = 0;
+    let notCompleted = 0;
+
+    for (const todo of todos) {
+      if (todo.completed) {
+        completed++;
+      } else {
+        notCompleted++;
+      }
+    }
+
     return {
       all: todos.length,
-      completed: todos.filter(todo => todo.completed).length,
-      notCompleted: todos.filter(todo => !todo.completed).length,
+      completed,
+      notCompleted,
     };
   }, [todos]);
 };

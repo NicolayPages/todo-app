@@ -1,23 +1,28 @@
 import { FC, useState } from 'react';
 
-import { TodoFilters } from 'components/TodoFilters';
 import { TodoList } from 'components/TodoList';
 import { CreateTodo } from 'components/forms';
 import { ConfirmDeleteModal } from 'components/modals';
 
 import { CONFIRM_MSG } from 'constants/confirmMsg';
+import { TODO_TABS } from 'constants/todoTabs';
 
 import { useGetTodoCounts } from 'hooks/useGetTodoCounts';
 
 import { useTodoStore } from 'store/useTodoStore';
 
-import { Block, Button } from 'ui/components';
+import { TFilter } from 'types/model';
+
+import { Block, Button, Tabs } from 'ui/components';
 
 import * as S from './styled';
 
 export const Home: FC = () => {
   const { notCompleted, completed } = useGetTodoCounts();
+
   const resetCompleted = useTodoStore(state => state.resetCompleted);
+  const filter = useTodoStore(state => state.filter);
+  const setFilter = useTodoStore(state => state.setFilter);
 
   const [resetModalOpen, setResetModalOpen] = useState<boolean>(false);
 
@@ -28,6 +33,10 @@ export const Home: FC = () => {
     toggleReset();
   };
 
+  const onSetFilterHandler = (id: TFilter) => {
+    setFilter(id);
+  };
+
   return (
     <S.Wrapper>
       <S.Title>todos</S.Title>
@@ -36,7 +45,11 @@ export const Home: FC = () => {
           <S.Label>Количество оставшихся задач {notCompleted}</S.Label>
           <CreateTodo />
           <S.FlexContainer>
-            <TodoFilters />
+            <Tabs
+              tabs={TODO_TABS}
+              activeId={filter}
+              onChange={onSetFilterHandler}
+            />
             <Button
               variant='danger'
               disabled={!completed}

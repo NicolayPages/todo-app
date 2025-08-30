@@ -1,7 +1,7 @@
 import { ChangeEvent, useCallback, useState } from 'react';
 
-export const useInput = (initialValue: string = '') => {
-  const [value, setValue] = useState<string>(initialValue);
+export const useInput = (initialValue = '') => {
+  const [value, setValue] = useState(initialValue);
 
   const onChange = useCallback((event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
@@ -9,7 +9,7 @@ export const useInput = (initialValue: string = '') => {
 
   const reset = useCallback(() => {
     setValue(initialValue);
-  }, []);
+  }, [initialValue]);
 
-  return [value, onChange, reset, setValue] as const;
+  return { value, onChange, reset, setValue };
 };

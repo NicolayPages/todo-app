@@ -11,7 +11,7 @@ import { getRandomId } from 'utils/getRandomId';
 import * as S from './styled';
 
 export const CreateTodo: FC = () => {
-  const [value, onChange, reset] = useInput();
+  const { value, onChange, reset } = useInput();
 
   const createTodo = useTodoStore(state => state.createTodo);
 

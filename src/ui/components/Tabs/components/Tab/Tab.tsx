@@ -1,12 +1,12 @@
 import { FC } from 'react';
 
-import { ITab } from 'types/model';
+import { ITab, TFilter } from 'types/model';
 
 import * as S from './styled';
 
 interface Props {
   data: ITab;
-  onChange: (tabId: string) => void;
+  onChange: (tabId: TFilter) => void;
   isActive?: boolean;
 }
 
@@ -16,7 +16,7 @@ export const Tab: FC<Props> = ({ data, onChange, isActive = false }) => {
     if (isActive) {
       return;
     }
-    onChange(id);
+    onChange(id as TFilter);
   };
 
   return (

@@ -16,6 +16,7 @@ declare module 'styled-components' {
       lightDanger: string;
       blue: string;
       transparentBlack: string;
+      mist: string;
     };
     paddings: {
       layoutPadding: string;

@@ -1,13 +1,13 @@
 import { FC, useMemo } from 'react';
 
-import { ITab } from 'types/model';
+import { ITab, TFilter } from 'types/model';
 
 import { Tab } from './components/Tab';
 import * as S from './styled';
 
 interface Props {
   tabs: ITab[];
-  onChange: (tabId: string) => void;
+  onChange: (tabId: TFilter) => void;
   activeId: string;
 }
 
@@ -23,7 +23,7 @@ export const Tabs: FC<Props> = ({ tabs = [], onChange, activeId }) => {
         />
       );
     });
-  }, [tabs, onChange]);
+  }, [tabs, onChange, activeId]);
 
   return <S.Wrapper>{tabsList}</S.Wrapper>;
 };

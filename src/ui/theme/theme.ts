@@ -15,6 +15,7 @@ export const baseTheme: DefaultTheme = {
     lightDanger: '#f70c0c',
     blue: '#1976D2',
     transparentBlack: 'rgba(0, 0, 0, 0.4)',
+    mist: '#BDBDBD',
   },
   paddings: {
     layoutPadding: '1rem',

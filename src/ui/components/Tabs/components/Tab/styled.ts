@@ -6,7 +6,7 @@ interface WrapperProps {
   isActive?: boolean;
 }
 export const Wrapper = styled.div<WrapperProps>`
-  background-color: ${({ theme }) => `#BDBDBD`};
+  background-color: ${({ theme }) => theme.colors.mist};
   padding: ${({ theme }) =>
     `${theme.paddings.uiPadding} ${theme.paddings.layoutPadding}`};
   cursor: pointer;

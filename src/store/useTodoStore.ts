@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware';
 import { STORAGE_KEYS } from 'constants/storageKeys';
 import { TODO_FILTER } from 'constants/todoFilter';
 
-import { ITodo } from 'types/model';
+import { ITodo, TFilter } from 'types/model';
 import { ITodoStore } from 'types/store';
 
 export const useTodoStore = create<ITodoStore>()(
@@ -41,7 +41,7 @@ export const useTodoStore = create<ITodoStore>()(
           todos: state.todos.filter(todo => !todo.completed),
         })),
 
-      setFilter: (status: keyof typeof TODO_FILTER) =>
+      setFilter: (status: TFilter) =>
         set(() => ({
           filter: status,
         })),

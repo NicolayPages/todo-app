@@ -21,7 +21,7 @@ export const TodoItem: FC<Props> = memo(
 
     const [editable, setEditable] = useState<boolean>(false);
 
-    const [value, onChange, _, setValue] = useInput(description);
+    const { value, onChange, setValue } = useInput(description);
 
     const isDisabled = !value.trim();
 
