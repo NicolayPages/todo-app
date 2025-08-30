@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 interface WrapperProps {
-  disable?: boolean;
+  $disable?: boolean;
 }
 
 export const Wrapper = styled.div<WrapperProps>`
@@ -15,8 +15,8 @@ export const Wrapper = styled.div<WrapperProps>`
   border: 1px solid #000;
   border: ${({ theme }) => `${theme.border.small} solid ${theme.colors.dark}`};
   cursor: pointer;
-  ${({ disable }) =>
-    !!disable &&
+  ${({ $disable }) =>
+    !!$disable &&
     css`
       cursor: not-allowed;
       opacity: 0.7;

@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { TEXT } from 'ui/theme/text';
 
 interface WrapperProps {
-  isActive?: boolean;
+  $isActive?: boolean;
 }
 export const Wrapper = styled.div<WrapperProps>`
   background-color: ${({ theme }) => theme.colors.mist};
@@ -16,8 +16,8 @@ export const Wrapper = styled.div<WrapperProps>`
   font-weight: 700;
   color: ${({ theme }) => theme.colors.white};
   text-align: center;
-  ${({ isActive }) =>
-    !!isActive &&
+  ${({ $isActive }) =>
+    !!$isActive &&
     css`
       cursor: default;
       background-color: ${({ theme }) => theme.colors.blue};

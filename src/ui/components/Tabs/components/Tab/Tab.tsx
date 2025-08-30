@@ -20,7 +20,7 @@ export const Tab: FC<Props> = ({ data, onChange, isActive = false }) => {
   };
 
   return (
-    <S.Wrapper isActive={isActive} onClick={onClick}>
+    <S.Wrapper $isActive={isActive} onClick={onClick}>
       {title}
     </S.Wrapper>
   );

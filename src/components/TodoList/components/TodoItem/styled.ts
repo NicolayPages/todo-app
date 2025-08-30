@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { TEXT } from 'ui/theme/text';
 
 interface DescriptionProps {
-  completed?: boolean;
+  $completed?: boolean;
 }
 
 export const Wrapper = styled.div`
@@ -36,8 +36,8 @@ export const Actions = styled.div`
 
 export const Description = styled.p<DescriptionProps>`
   ${TEXT.P}
-  ${({ completed, theme }) =>
-    !!completed &&
+  ${({ $completed, theme }) =>
+    !!$completed &&
     css`
       color: ${theme.colors.gray};
       text-decoration: line-through;

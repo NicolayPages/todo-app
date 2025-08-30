@@ -1,4 +1,4 @@
-import { FC, memo, useState } from 'react';
+import { FC, useState } from 'react';
 
 import { useInput } from 'hooks/useInput';
 
@@ -15,77 +15,77 @@ interface Props
   todo: ITodo;
 }
 
-export const TodoItem: FC<Props> = memo(
-  ({ todo, deleteTodo, toggleTodo, updateTodo }) => {
-    const { id, completed, description } = todo;
+export const TodoItem: FC<Props> = ({
+  todo,
+  deleteTodo,
+  toggleTodo,
+  updateTodo,
+}) => {
+  const { id, completed, description } = todo;
 
-    const [editable, setEditable] = useState<boolean>(false);
+  const [editable, setEditable] = useState<boolean>(false);
 
-    const { value, onChange, setValue } = useInput(description);
+  const { value, onChange, setValue } = useInput(description);
 
-    const isDisabled = !value.trim();
+  const isDisabled = !value.trim();
 
-    const toggleEditable = () => setEditable(e => !e);
+  const toggleEditable = () => setEditable(e => !e);
 
-    const onSave = () => {
-      updateTodo({ ...todo, description: value });
-      toggleEditable();
-    };
+  const onSave = () => {
+    if (isDisabled) return;
+    updateTodo({ ...todo, description: value });
+    toggleEditable();
+  };
 
-    const onCancel = () => {
-      toggleEditable();
-      setValue(description);
-    };
+  const onCancel = () => {
+    toggleEditable();
+    setValue(description);
+  };
 
-    const onDelete = () => {
-      deleteTodo(id);
-    };
+  const onDelete = () => {
+    deleteTodo(id);
+  };
 
-    const onToggle = () => {
-      toggleTodo(id);
-    };
+  const onToggle = () => {
+    toggleTodo(id);
+  };
 
-    return (
-      <S.Wrapper>
-        <S.Container>
-          <S.Info>
-            <Checker toggle={onToggle} active={completed} disable={editable} />
-            {editable ? (
-              <Input value={value} onChange={onChange} />
-            ) : (
-              <S.Description completed={completed}>{description}</S.Description>
-            )}
-          </S.Info>
-          <S.Actions>
-            {editable && (
-              <>
-                <Button
-                  disabled={isDisabled}
-                  onClick={onSave}
-                  title='Сохранить'
-                >
-                  <Save />
-                </Button>
-                <Button onClick={onCancel} title='Отменить'>
-                  <Cancel />
-                </Button>
-              </>
-            )}
-            {!editable && !completed && (
-              <Button
-                onClick={toggleEditable}
-                title='Редактировать'
-                variant='secondary'
-              >
-                <Edit />
+  return (
+    <S.Wrapper>
+      <S.Container>
+        <S.Info>
+          <Checker toggle={onToggle} active={completed} disable={editable} />
+          {editable ? (
+            <Input handleKeyDown={onSave} value={value} onChange={onChange} />
+          ) : (
+            <S.Description $completed={completed}>{description}</S.Description>
+          )}
+        </S.Info>
+        <S.Actions>
+          {editable && (
+            <>
+              <Button disabled={isDisabled} onClick={onSave} title='Сохранить'>
+                <Save />
               </Button>
-            )}
-            <Button onClick={onDelete} title='Удалить' variant='danger'>
-              <Delete />
+              <Button onClick={onCancel} title='Отменить'>
+                <Cancel />
+              </Button>
+            </>
+          )}
+          {!editable && !completed && (
+            <Button
+              onClick={toggleEditable}
+              title='Редактировать'
+              variant='secondary'
+            >
+              <Edit />
             </Button>
-          </S.Actions>
-        </S.Container>
-      </S.Wrapper>
-    );
-  },
-);
+          )}
+          <Button onClick={onDelete} title='Удалить' variant='danger'>
+            <Delete />
+          </Button>
+        </S.Actions>
+      </S.Container>
+    </S.Wrapper>
+  );
+};

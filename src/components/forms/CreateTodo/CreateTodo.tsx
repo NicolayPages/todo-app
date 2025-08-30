@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 
 import { useInput } from 'hooks/useInput';
 
@@ -17,18 +17,25 @@ export const CreateTodo: FC = () => {
 
   const disabled = !value.trim();
 
-  const createHandler = () => {
+  const createHandler = useCallback(() => {
+    if (disabled) return;
+
     createTodo({
       id: getRandomId(),
       description: value,
       completed: false,
     });
     reset();
-  };
+  }, [createTodo, disabled, reset, value]);
 
   return (
     <S.Wrapper>
-      <Input placeholder='Введите задачу' value={value} onChange={onChange} />
+      <Input
+        placeholder='Введите задачу'
+        handleKeyDown={createHandler}
+        value={value}
+        onChange={onChange}
+      />
       <Button disabled={disabled} onClick={createHandler}>
         Создать
       </Button>

@@ -18,7 +18,7 @@ export const Checker: FC<CheckerProps> = ({
   };
 
   return (
-    <S.Wrapper disable={disable} onClick={toggleHandler}>
+    <S.Wrapper $disable={disable} onClick={toggleHandler}>
       {active && <Checkmark />}
     </S.Wrapper>
   );

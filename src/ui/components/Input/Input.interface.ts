@@ -6,4 +6,5 @@ export interface InputProps {
   placeholder?: string;
   name?: string;
   disabled?: boolean;
+  handleKeyDown?: () => void;
 }
