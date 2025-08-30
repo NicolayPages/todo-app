@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import { TEXT } from 'ui/theme/text';
+import { baseTheme } from 'ui/theme/theme';
 
 export const Wrapper = styled.div`
   padding-top: ${({ theme }) => theme.paddings.titlePadding};
@@ -28,4 +29,7 @@ export const FlexContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: ${({ theme }) => theme.gaps.medium};
+  @media (max-width: ${baseTheme.breakpoints.tablet}px) {
+    flex-direction: column-reverse;
+  }
 `;

@@ -39,6 +39,7 @@ export const baseTheme: DefaultTheme = {
   },
   breakpoints: {
     mobile: 425,
+    tablet: 768,
   },
   gaps: {
     small: '8px',
